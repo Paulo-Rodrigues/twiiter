@@ -27,4 +27,18 @@ feature 'User Registration' do
     expect(page).to have_content('E-mail não pode ficar em branco')
     expect(page).to have_content('Senha não pode ficar em branco')
   end
+
+  scenario 'after sign up redirect to twiits page' do
+    visit root_path
+
+    click_on 'Inscrever-se'
+
+    fill_in 'E-mail', with: 'test@test.com'
+    fill_in 'Senha', with: 'password'
+    fill_in 'Confirme sua senha', with: 'password'
+    click_on 'Inscrever-se'
+
+    expect(page).to have_content('Bem vindo!')
+    expect(current_path).to eq(twiits_path)
+  end
 end
