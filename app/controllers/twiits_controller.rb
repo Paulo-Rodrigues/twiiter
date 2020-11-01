@@ -1,3 +1,7 @@
 class TwiitsController < ApplicationController
-  def index; end
+  before_action :authenticate_user!
+
+  def index
+    @twiits = Twiit.all
+  end
 end

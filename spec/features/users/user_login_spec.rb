@@ -50,6 +50,6 @@ feature 'User Login' do
 
     visit root_path
 
-    expect(page).to have_content('index')
+    expect(current_path).to eq('/')
   end
 end
