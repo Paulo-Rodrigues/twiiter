@@ -45,4 +45,29 @@ feature 'Twiits' do
       expect(page).to have_content('não pode ficar em branco')
     end
   end
+
+  context 'delete twiits' do
+    scenario 'seccessfully' do
+      user = create(:user)
+      login_as(user)
+      twiit = create(:twiit, user: user)
+
+      visit root_path
+      click_on 'Delete twiit'
+
+      expect(page).to have_content('Deletado')
+      expect(page).not_to have_content(twiit.text)
+    end
+
+    scenario 'must be owner' do
+      user = create(:user)
+      other_user = create(:user)
+      login_as(other_user)
+      twiit = create(:twiit, user: user)
+
+      visit root_path
+
+      expect(page).not_to have_link('Delete twiit')
+    end
+  end
 end

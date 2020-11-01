@@ -6,4 +6,5 @@
 
 <% @twiits.each do |twiit| %>
   <p><%= twiit.text %></p>
+  <%= link_to 'Delete twiit', twiit_path(twiit), method: :delete if twiit.owner?(current_user) %>
 <% end %>
