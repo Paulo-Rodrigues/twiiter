@@ -1,3 +1,9 @@
+<%= form_with(model: @twiit, local: true) do |form| %>
+  <%= form.label :text, 'twiit' %>
+  <%= form.text_area :text %>
+  <%= form.submit 'TWIIT' %>
+<% end %>
+
 <% @twiits.each do |twiit| %>
   <p><%= twiit.text %></p>
 <% end %>

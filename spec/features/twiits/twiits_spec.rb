@@ -18,4 +18,31 @@ feature 'Twiits' do
 
     expect(page).to have_content(twiit.text)
   end
+
+  context 'create Twiits' do
+    scenario 'create' do
+      user = create(:user)
+      login_as(user)
+
+      visit root_path
+
+      fill_in 'twiit', with: 'My Twiit'
+      click_on 'TWIIT'
+
+      expect(page).to have_content('My Twiit')
+      expect(page).to have_content('Postado')
+    end
+
+    scenario 'failure' do
+      user = create(:user)
+      login_as(user)
+
+      visit root_path
+
+      fill_in 'twiit', with: ''
+      click_on 'TWIIT'
+
+      expect(page).to have_content('não pode ficar em branco')
+    end
+  end
 end

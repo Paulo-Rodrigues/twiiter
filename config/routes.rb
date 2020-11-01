@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'twiits#index', as: :authenticated_root
   end
 
-  resources :twiits, only: %i[index]
+  resources :twiits, only: %i[index create]
 
   root to: 'homepage#index'
 end
