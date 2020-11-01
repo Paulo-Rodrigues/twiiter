@@ -1,0 +1,15 @@
+@import 'variables';
+
+.custom-btn {
+  margin: 0.5rem 0;
+  background-color: $custom-blue;
+  border-radius: 50px !important;
+}
+
+.custom-btn-outline {
+  margin: 0.5rem 0;
+  background-color: transparent !important;
+  border-radius: 50px !important;
+  border: 1px solid $custom-blue;
+  color: $custom-blue;
+}
