@@ -1,0 +1,27 @@
+.twiit {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  background-color: $custom-dark;
+}
+
+.twiit_form {
+  width: 100%;
+  border: 1px solid #333;
+}
+
+.twiit_form_box {
+  border: none;
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    border: none;
+    outline: none;
+    color: #fff;
+  }
+
+  input {
+    align-self: flex-end;
+    margin-right: 1rem;
+  }
+}

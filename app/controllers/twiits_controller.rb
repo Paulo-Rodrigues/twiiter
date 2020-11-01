@@ -20,7 +20,7 @@ class TwiitsController < ApplicationController
 
   def destroy
     twiit = Twiit.find(params[:id])
-    twiit.destroy
+    twiit.destroy if twiit.owner?(current_user)
     flash[:notice] = 'Deletado'
     redirect_back(fallback_location: root_path)
   end

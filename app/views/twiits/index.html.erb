@@ -1,10 +1,63 @@
-<%= form_with(model: @twiit, local: true) do |form| %>
-  <%= form.label :text, 'twiit' %>
-  <%= form.text_area :text %>
-  <%= form.submit 'TWIIT' %>
-<% end %>
+<section class="main_layout">
 
-<% @twiits.each do |twiit| %>
-  <p><%= twiit.text %></p>
-  <%= link_to 'Delete twiit', twiit_path(twiit), method: :delete if twiit.owner?(current_user) %>
-<% end %>
+  <section class="mobile_menu_header">
+    <ul id="slide-out" class="sidenav mobile_menu">
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a href="#!">Second Link</a></li>
+      <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <h1>Página inicial</h1>
+  </section>
+
+  <section class="menu">
+    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+  </section>
+
+  <section class="feed">
+    <div class="twiit_form">
+      <%= form_with(model: @twiit, local: true) do |form| %>
+        <div class="twiit_form_box" >
+          <%= form.label :text, 'twiit' %>
+          <%= form.text_area :text %>
+          <%= form.submit 'TWIIT', class: 'btn custom-btn-outline' %>
+        </div>
+      <% end %>
+    </div>
+
+      <% @twiits.each do |twiit| %>
+        <div class="twiit">
+          <p><%= twiit.text %></p>
+          <%= link_to 'Delete twiit', twiit_path(twiit), 
+            method: :delete if twiit.owner?(current_user) %>
+        </div>
+      <% end %>
+  </section>
+
+  <section class="menu_aside">
+    <ul class="collection with-header custom-collection">
+        <li class="collection-item"><h4>O que está acontecendo</h4></li>
+        <li class="collection-item">Alvin</li>
+        <li class="collection-item">Alvin</li>
+        <li class="collection-item">Alvin</li>
+        <li class="collection-item">Alvin</li>
+      </ul>
+  </section>
+
+  <footer class="mobile_footer">
+    <ul>
+      <li><a href="#"><i class="material-icons">search</i></a></li>
+      <li><a href="#"><i class="material-icons">home</i></a></li>
+      <li><a href="#"><i class="material-icons">notifications</i></a></li>
+      <li><a href="#"><i class="material-icons">mail</i></a></li>
+    </ul>
+  </footer>
+</section>
+
+

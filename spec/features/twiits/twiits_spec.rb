@@ -63,7 +63,7 @@ feature 'Twiits' do
       user = create(:user)
       other_user = create(:user)
       login_as(other_user)
-      twiit = create(:twiit, user: user)
+      create(:twiit, user: user)
 
       visit root_path
 
