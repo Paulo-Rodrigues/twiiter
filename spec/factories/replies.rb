@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :reply do
-    body { 'MyText' }
-    user { nil }
-    replieable { nil }
+    body { 'MyReply' }
+    user
+    replieable
   end
 end

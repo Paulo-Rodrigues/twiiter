@@ -1,5 +1,7 @@
 <%= @twiit.text %>
 
-<% @twiit.replies.each do |reply| %>
-  <%= reply.body %>
-<% end %>
+<%= render partial: 'replies/reply', collection: @twiit.replies, as: :replieable %>
+
+<div id="reply_twiit_form">
+  <%= render partial: 'replies/form', locals: { replieable: @twiit } %>
+</div>

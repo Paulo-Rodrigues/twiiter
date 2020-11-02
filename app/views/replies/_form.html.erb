@@ -1,0 +1,5 @@
+<%= form_with(model: [replieable, Reply.new], local: true) do |form| %>
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+  <%= form.submit 'Enviar' %>
+<% end %>

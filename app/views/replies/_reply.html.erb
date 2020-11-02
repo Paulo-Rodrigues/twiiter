@@ -1,0 +1,7 @@
+<%= replieable.body %>
+
+<%= render partial: 'replies/replies', locals: { replieable: replieable } %>
+
+<div id="reply_for_reply_form">
+  <%= render partial: 'replies/form', locals: { replieable: replieable } %>
+</div>
