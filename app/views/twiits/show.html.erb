@@ -1,0 +1,5 @@
+<%= @twiit.text %>
+
+<% @twiit.replies.each do |reply| %>
+  <%= reply.body %>
+<% end %>

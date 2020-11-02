@@ -10,5 +10,6 @@ RSpec.describe Twiit, type: :model do
 
   context 'associations' do
     it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:replies).dependent(:destroy) }
   end
 end
