@@ -19,6 +19,8 @@ feature 'Twiits' do
     expect(page).to have_content(twiit.text)
   end
 
+  scenario 'link_to show twiit'
+
   context 'create Twiits' do
     scenario 'create' do
       user = create(:user)
