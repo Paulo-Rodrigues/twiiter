@@ -13,5 +13,6 @@ RSpec.describe Reply, type: :model do
     it { is_expected.to belong_to(:user) }
     it { is_expected.to belong_to(:replieable) }
     it { is_expected.to have_many(:replies).dependent(:destroy) }
+    it { is_expected.to have_many(:likes).dependent(:destroy) }
   end
 end

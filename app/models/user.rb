@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_many :twiits, dependent: :destroy
   has_many :replies, dependent: :destroy
   has_one :profile, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   after_create :create_user_profile
   # Include default devise modules. Others available are:

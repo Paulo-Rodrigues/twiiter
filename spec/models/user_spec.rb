@@ -10,5 +10,6 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_many(:twiits).dependent(:destroy) }
     it { is_expected.to have_many(:replies).dependent(:destroy) }
     it { is_expected.to have_one(:profile).dependent(:destroy) }
+    it { is_expected.to have_many(:likes).dependent(:destroy) }
   end
 end
