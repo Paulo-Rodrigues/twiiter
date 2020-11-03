@@ -17,7 +17,9 @@
     <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
     <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
     <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
-    <h2><i class="material-icons">home</i> <a href="#">Link</a></h2>
+    <h2><i class="material-icons">home</i>
+      <%= link_to 'Perfil', user_profile_path(current_user, current_user.profile) if user_signed_in? %>
+    </h2>
   </section>
 
   <section class="feed">

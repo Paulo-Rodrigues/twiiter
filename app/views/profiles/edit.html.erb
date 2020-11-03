@@ -1,0 +1,12 @@
+<%= form_with(model: [:user, @profile], local: true) do |form| %>
+  <%= form.label :first_name, 'Nome' %>
+  <%= form.text_field :first_name %>
+
+  <%= form.label :last_name, 'Sobrenome' %>
+  <%= form.text_field :last_name %>
+
+  <%= form.label :bio, 'Bio' %>
+  <%= form.text_area :bio %>
+
+  <%= form.submit 'Enviar' %>
+<% end %>

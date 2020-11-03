@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     root to: 'twiits#index', as: :authenticated_root
   end
 
+  resources :users , only: [] do
+    resources :profiles, only: %i[show edit update]
+  end
+
   resources :twiits, only: %i[index show create destroy] do
     resources :replies, only: :create, module: :twiits
   end
