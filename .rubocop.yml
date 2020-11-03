@@ -24,3 +24,5 @@ Rails/FilePath:
   Enabled: false
 Metrics/AbcSize:
   Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
