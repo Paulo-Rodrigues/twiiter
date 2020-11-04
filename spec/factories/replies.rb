@@ -2,6 +2,6 @@ FactoryBot.define do
   factory :reply do
     body { 'MyReply' }
     user
-    replieable
+    replieable { create(:twiit) }
   end
 end

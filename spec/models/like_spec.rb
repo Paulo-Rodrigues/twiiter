@@ -15,12 +15,28 @@ RSpec.describe Like, type: :model do
       expect(user.likes.count).to eq(1)
     end
 
+    it '#like (reply)' do
+      user = create(:user)
+      reply = create(:reply)
+      user.like(reply)
+
+      expect(user.likes.count).to eq(1)
+    end
+
     it '#liked?(twiit)' do
       user = create(:user)
       twiit = create(:twiit)
       user.like(twiit)
 
       expect(user.liked?(twiit)).to be_truthy
+    end
+
+    it '#liked?(twiit)' do
+      user = create(:user)
+      reply = create(:reply)
+      user.like(reply)
+
+      expect(user.liked?(reply)).to be_truthy
     end
 
     it '#unlike(twiit)' do
@@ -30,6 +46,15 @@ RSpec.describe Like, type: :model do
       user.unlike(twiit)
 
       expect(user.liked?(twiit)).to be_falsey
+    end
+
+    it '#unlike(twiit)' do
+      user = create(:user)
+      reply = create(:reply)
+      user.like(reply)
+      user.unlike(reply)
+
+      expect(user.liked?(reply)).to be_falsey
     end
   end
 

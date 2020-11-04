@@ -1,4 +1,7 @@
-<%= replieable.body %>
+<div class="reply">
+  <%= replieable.body %>
+  <%= link_to 'Like', reply_likes_path(replieable), method: :post %>
+</div>
 
 <%= render partial: 'replies/replies', locals: { replieable: replieable } %>
 

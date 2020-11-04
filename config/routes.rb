@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :replies, only: [] do
     resources :replies, only: :create, module: :replies
+    resources :likes, only: %i[create], module: :replies
   end
 
   root to: 'homepage#index'
