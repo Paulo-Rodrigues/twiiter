@@ -6,6 +6,33 @@ RSpec.describe Like, type: :model do
     it { is_expected.to belong_to(:likeable) }
   end
 
+  context 'methods' do
+    it '#like (twiit)' do
+      user = create(:user)
+      twiit = create(:twiit)
+      user.like(twiit)
+
+      expect(user.likes.count).to eq(1)
+    end
+
+    it '#liked?(twiit)' do
+      user = create(:user)
+      twiit = create(:twiit)
+      user.like(twiit)
+
+      expect(user.liked?(twiit)).to be_truthy
+    end
+
+    it '#unlike(twiit)' do
+      user = create(:user)
+      twiit = create(:twiit)
+      user.like(twiit)
+      user.unlike(twiit)
+
+      expect(user.liked?(twiit)).to be_falsey
+    end
+  end
+
   context 'validations' do
     it { is_expected.to validate_presence_of(:user_id) }
     it { is_expected.to validate_presence_of(:likeable_id) }

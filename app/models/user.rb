@@ -10,6 +10,18 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def like(likeable)
+    likes.create!(likeable: likeable)
+  end
+
+  def unlike(likeable)
+    likes.delete(Like.where(user: self, likeable: likeable))
+  end
+
+  def liked?(likeable)
+    likes.map(&:likeable_id).include?(likeable.id)
+  end
+
   private
 
   def create_user_profile

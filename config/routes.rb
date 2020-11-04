@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :twiits, only: %i[index show create destroy] do
     resources :replies, only: :create, module: :twiits
+    resources :likes, only: %i[create destroy], module: :twiits
   end
 
   resources :replies, only: [] do
